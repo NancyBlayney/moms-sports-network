@@ -1,0 +1,32 @@
+<div class="page home-page">
+	<section>
+		<header>
+			<h3>Welcome!</h3>
+		</header>
+		<p> 
+			We are.... lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+			tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+			quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+			consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+			cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+			proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+		</p>
+	</section>
+
+	<section>
+		<header>
+			<h3>Pick a sport to get started:</h3>
+		</header>
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Dropdown Example
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<% @sports.each do |sport| %>
+						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li>
+					<% end %>
+				</ul>
+			</div>
+
+	</section>
+
+</div>

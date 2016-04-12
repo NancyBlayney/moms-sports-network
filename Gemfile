@@ -1,5 +1,14 @@
 source 'https://rubygems.org'
 
+
+
+
+gem 'bootstrap-sass', '~> 3.2.0'
+
+gem 'autoprefixer-rails'
+
+gem 'json', '1.8.2'
+
 gem 'amazon-ecs'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5.1'
@@ -31,6 +40,8 @@ gem 'sdoc', '~> 0.4.0', group: :doc
 
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
+
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

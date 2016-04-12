@@ -1,0 +1,22 @@
+// Place all the styles related to the sports controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+
+.sports-nav{
+	width: 25%;
+	float: left;
+}
+
+.sports-content{
+	width: 70%;
+	float: left;
+	img{
+		width: 25%;
+		float: right;
+	}
+}
+
+.partial {
+	display: none;
+}

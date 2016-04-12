@@ -1,0 +1,33 @@
+<div class="page sport-show-page">
+	<section class="sports-nav">
+		<nav class="sports-nav-bar">
+			<div class="dropdown">
+				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%= @sport.name %>
+				<span class="caret"></span></button>
+				<ul class="dropdown-menu">
+					<% @sports.each do |sport| %>
+						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li><br>
+					<% end %>
+				</ul>
+			</div>
+		</nav>
+		<a href="#"><h2 id="overview">Overview</h2></a>
+		<a href="#"><h2 id="rules">Rules</h2></a>
+		<h2>Gear</h2>
+		<h2>Garb</h2>
+		<h2>News</h2>
+	</section>
+	<section class="sports-content">
+		<header>
+			<h2><%= @sport.name %></h2>
+		</header>
+		<div class="sports-main-image">
+			<img src="<%= @sport.image %>">
+		</div>
+		<div id="render-place">
+			<%= render 'shared/rules' %>
+			<%= render 'shared/overview' %>
+		</div>
+	</section>
+	
+</div>

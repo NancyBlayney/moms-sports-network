@@ -1,3 +1,49 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+
+.container {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+	min-height: 60vh;
+}
+
+
+nav {
+	background-color: $green;
+	ul {
+		list-style-type: none;
+		text-align: center;
+		li {
+			display: inline-block;
+			&:hover{
+				background-color: $hovergreen;
+			}
+			a {
+				display: inline-block;
+				height: 100%;
+				width: 100%;
+				color: $white;
+				padding: 10px 20px;
+			}
+		}
+	}
+}
+
+// #last-item {
+// 	border-right: 1px dotted $white;
+// }
+
+#logo {
+	background-color: $white;
+	padding-left: 10%;
+	font-family: 'Rock Salt', cursive;
+	h2 {
+		padding: 0;
+		margin: 0;
+	}
+}
+
+

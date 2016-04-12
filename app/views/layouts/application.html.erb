@@ -2,13 +2,32 @@
 <html>
 <head>
   <title>MsnApp</title>
-  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : "My Application" %></title>
+    <meta name="description" content="<%= content_for?(:description) ? yield(:description) : "Learn Rails" %>">
+    <%= stylesheet_link_tag "application", media: "all", "data-turbolinks-track" => true %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <link href='https://fonts.googleapis.com/css?family=Rock+Salt' rel='stylesheet' type='text/css'>
+    <%= csrf_meta_tags %>
 </head>
 <body>
+	<header id="logo">
+		<h2>Mom's <br>Sports <br>Network</h2>
+	</header>
+	<nav id="main-nav">
+		<ul>
+			<li><%=link_to 'Home', root_path, :class => 'fill' %></li>
+			<li><%=link_to 'About', about_path, :class => 'fill'  %></li>
+			<li><%= link_to 'Amazon', amazon_index_path, :class => 'fill'  %></li>
+			<li><%=link_to 'Sports', sports_path, :class => 'fill'  %></li>
+			<li><%=link_to 'News', news_path, :class => 'fill'  %></li>
+			<li id="last-item"><%=link_to 'Forum' %></li>
+		</ul>
+	</nav>
 
-<%= yield %>
+	<div class="container">
+		<%= yield %>
+	</div>
 
 </body>
 </html>
