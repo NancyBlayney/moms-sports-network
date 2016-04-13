@@ -20,3 +20,19 @@
 body{
 	background-color: #FFF9E8;
 }
+
+
+.btn-primary:hover, .btn-primary:focus, .btn-primary:active, .btn-primary.active, .open .dropdown-toggle.btn-primary {
+
+  background-color: #ABA0FF;
+  border-color: #55507f;
+ }
+
+.btn {
+	width: 100%;
+	max-width: 300px;
+  background-color: #ABA0FF;
+  border-color: #7770b2;
+}
+
+

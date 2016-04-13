@@ -1,4 +1,7 @@
 <div class="page sport-show-page">
+	<div class="sport-header">
+		<%= @sport.name %>
+	</div>
 	<section class="sports-nav">
 		<div class="sports-nav-bar">
 			<div class="dropdown">
@@ -6,21 +9,20 @@
 				<span class="caret"></span></button>
 				<ul class="dropdown-menu">
 					<% @sports.each do |sport| %>
-						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li><br>
+						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li>
 					<% end %>
 				</ul>
 			</div>
 		</div>
-		<a href="#"><h2 id="overview">Overview</h2></a>
-		<a href="#"><h2 id="rules">Rules</h2></a>
-		<a href="#"><h2 id="garb">Garb</h2></a>
-		<a href="#"><h2 id="gear">Gear</h2></a>
-		<a href="#"><h2 id="sport-news">News</h2></a>
+		<div class="side-nav">
+			<a href="#" id="overview"><h2>Overview</h2></a>
+			<a href="#" id="rules"><h2>Rules</h2></a>
+			<a href="#" id="garb"><h2>Garb</h2></a>
+			<a href="#" id="gear"><h2>Gear</h2></a>
+			<a href="#" id="sport-news"><h2>News</h2></a>
+		</div>
 	</section>
 	<section class="sports-content">
-		<header>
-			<h2><%= @sport.name %> - </h2>
-		</header>
 		<div class="sports-main-image">
 			<img src="<%= @sport.image %>">
 		</div>

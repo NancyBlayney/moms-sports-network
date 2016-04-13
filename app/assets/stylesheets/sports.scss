@@ -3,17 +3,58 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
+.sport-header{
+	width: 10vw;
+	font-size: 3.5vw;
+	position: fixed;
+	top: 13px;
+	left: 43vw;
+	overflow: visible;
+	font-family: 'Coda', cursive;
+}
+
 .sports-nav{
+	margin-top: 3%;
 	width: 25%;
 	float: left;
-	border: 1px solid black;
 }
+
+.side-nav{
+	margin-top: 10px;
+	border-right: 1px solid $border;
+	border-bottom: 1px solid $border;
+	border-left: 1px solid $border;
+	border-radius: 10px;
+	overflow: hidden;
+	h2{
+		margin: 0;
+		font-size: 12px;
+	}
+	a:link{
+		border-top:1px solid $border;
+		padding: 2vh;
+		display: block;
+		text-decoration: none;
+		color: $green;
+		&:visited{
+			color: $gray;
+			background-color: $green;
+			text-decoration: none;
+		}
+		&:hover{
+			color: $gray;
+			background-color: $green;
+			text-decoration: none;
+		}
+	}
+}
+
+
 
 .sports-content{
 	width: 70%;
 	float: left;
 	margin-left: 3%;
-	border: 1px solid black;
 	padding: 1%;
 	img{
 		width: 25%;
@@ -21,15 +62,21 @@
 	}
 }
 
+
 .partial {
 	display: none;
 	h2{
 		text-align: center;
+		font-family: 'Rock Salt', cursive;
+		padding: 5px 0 15px 0;
 	}
 }
 
 .sport-section{
 	.sport-title{
+		&:hover{
+			cursor: pointer;
+		}
 	}
 	.sport-body {
 		display: none;

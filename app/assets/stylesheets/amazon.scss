@@ -2,3 +2,71 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
+
+.filters{
+	width: 25%;
+	float: left;
+}
+
+.display{
+	border: 1px solid $border;
+	margin-top: 1%;
+	min-height: 50vh;
+	width: 74%;
+	float: right;
+	background-color: #fffbf8;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.amazon-return{
+	position: relative;
+	margin: 2%;
+	padding: 2vh;
+	width: 190px;
+	border: 1px solid $border;
+	border-radius: 10px;
+	overflow: hidden;
+	text-align: center;
+	.amazon-img {
+		height: 160px;
+		max-width: 90%;
+		margin: 0 auto;
+		img {
+			width: 100%;
+			max-height:150px;
+		}
+	}
+	.amazon-title{
+		font-weight: 600;
+	}
+	.amazon-price{
+		font-style: italic;
+		padding: 2px;
+	}
+	.amazon-go{
+		position: absolute;
+		margin-top: 5px;
+		bottom: 9px;
+		left: 4px;
+		width: 180px;
+		&:hover{
+			background-color: $white;
+			a {
+				color: $triad;
+			}
+		}
+		a {
+			display: block;
+			height: 100%;
+			width: 100%;
+			color: $white;
+			text-decoration: none;
+		}
+	}
+}
+
+.display{
+
+}
