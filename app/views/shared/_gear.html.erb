@@ -1,0 +1,19 @@
+<div class="partial gearp">
+	<h2>The Equipment</h2>
+	<% @gears.each do |gear| %>
+		<hr />
+		<section class="sport-section">
+			<div class="sport-title"><h4><%= gear.title %></h4></div>
+			<div class="sport-body">
+				<%= gear.body %>
+				<% if gear.link.length > 1 %>
+					<div class="sport-link">
+						<strong>Shop now: </strong>
+						<a href="<%= gear.link %>"><%= gear.link %></a>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	<% end %>
+	<hr />
+</div>

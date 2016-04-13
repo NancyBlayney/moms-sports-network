@@ -27,6 +27,12 @@ nav {
 				width: 100%;
 				color: $white;
 				padding: 10px 20px;
+				&:link{
+					text-decoration: none;
+				}
+				&:visited{
+					color: $white;
+				}
 			}
 		}
 	}

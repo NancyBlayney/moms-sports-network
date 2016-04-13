@@ -1,0 +1,19 @@
+<div class="partial garbp">
+	<h2>The Clothes</h2>
+	<% @garbs.each do |garb| %>
+		<hr />
+		<section class="sport-section">
+			<div class="sport-title"><h4><%= garb.title %></h4></div>
+			<div class="sport-body">
+				<%= garb.body %>
+				<% if garb.link.length > 1 %>
+					<div class="sport-link">
+						<strong>Shop now: </strong>
+						<a href="<%= garb.link %>"><%= garb.link %></a>
+					</div>
+				<% end %>
+			</div>
+		</section>
+	<% end %>
+	<hr />
+</div>

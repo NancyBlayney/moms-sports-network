@@ -6,11 +6,15 @@
 .sports-nav{
 	width: 25%;
 	float: left;
+	border: 1px solid black;
 }
 
 .sports-content{
 	width: 70%;
 	float: left;
+	margin-left: 3%;
+	border: 1px solid black;
+	padding: 1%;
 	img{
 		width: 25%;
 		float: right;
@@ -19,4 +23,15 @@
 
 .partial {
 	display: none;
+	h2{
+		text-align: center;
+	}
+}
+
+.sport-section{
+	.sport-title{
+	}
+	.sport-body {
+		display: none;
+	}
 }
