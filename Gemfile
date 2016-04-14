@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'activeadmin', github: 'gregbell/active_admin'
 gem 'devise'
-
+gem "font-awesome-rails"
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
 

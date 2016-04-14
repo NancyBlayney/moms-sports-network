@@ -18,15 +18,7 @@
 		<header>
 			<h3>Pick a sport to get started:</h3>
 		</header>
-			<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Select your sport
-				<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<% @sports.each do |sport| %>
-						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li>
-					<% end %>
-				</ul>
-			</div>
+		<%= render 'shared/sportlist' %>
 	</section>
 
 </div>

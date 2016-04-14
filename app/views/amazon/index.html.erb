@@ -1,24 +1,69 @@
 <div class="page amazon-page">
-
 	<section class="filters">
-		<%= form_tag("/amazon", method: "get", action: 'index') do %>
-		  <%= label_tag(:amazon_search, "Search for:") %>
-		  <%= text_field_tag(:amazon_search) %>
-		  <%= submit_tag("Search") %>
-		<% end %>	
+		<h4>Useful Filters</h4>
+		<div id="amazon-form">
+			<%= form_tag("/amazon", method: "get", action: 'index') do %>
+				<div id="filter-list">
+					<select class="filter sport-filter" name="Sport">
+						<option value="">Sport</option>
+						<option value=""></option>
+						<% @sports.each do |sport| %>
+							<option value="<%= sport.name %>"><%= sport.name %></option>
+						<% end %>
+					</select>
+
+					<select class="filter position-filter" name="Position">
+						<option value="">Position</option>
+						<option value=""></option>
+						<% @positions.each do |position| %>
+							<option value="<%= position.name %>"><%= position.sport.name %> - <%= position.name %></option>
+						<% end %>
+					</select>
+
+					<select class="filter gender-filter" name="gender">
+						<option value="">Gender</option>
+						<option value=""></option>
+						<option value="womens">Female</option>
+						<option value="mens">Male</option>
+					</select>
+
+					<select class="filter age-filter" name="age">
+						<option value="">Age</option>
+						<option value=""></option>
+						<option value="toddler"> < 5 years</option>
+						<option value="kids">5-13 years</option>
+						<option value="adult">14+ years</option>
+					</select>
+
+					<select class="filter item-filter" name="item">
+						<option value="">Item</option>
+						<option value=""></option>
+						<option value="socks">Socks</option>
+						<option value="shoes">Shoes</option>
+						<option value="shorts">Shorts</option>
+						<option value="shirt">Shirts</option>
+						<option value="hat">Hats</option>
+					</select>
+				</div>
+				<%= label_tag(:amazon_search, "Search for:") %>
+				<%= text_field_tag(:amazon_search) %><br><br>
+				<%= submit_tag("Search") %>
+			<% end %>
+		</div>
 	</section>
 
 	<section class="display">
-					<% if @res != nil %>
-						<% @res.items.each do |item| %>
-							<div class="amazon-return">
-								<div class="amazon-img"><img src="<%= item.get('MediumImage/URL') %>"></div>
-								<div class="amazon-title"><%= item.get('ItemAttributes/Title') %></div>
-								<div class="amazon-price"><%= item.get('Offers/Offer/OfferListing/Price/FormattedPrice') %></div><br><br>
-								<div class="amazon-go btn"><a href='<%= item.get ('DetailPageURL') %>'>Shop Now</a></div>
-							</div>
-						<% end %>
-					<% end %>
+		<% if @res != nil %>
+		<% @res.items.each do |item| %>
+		<div class="amazon-return">
+			<div class="amazon-img"><img src="<%= item.get('MediumImage/URL') %>"></div>
+			<div class="amazon-title"><%= item.get('ItemAttributes/Title') %></div>
+			<div class="amazon-price"><%= item.get('Offers/Offer/OfferListing/Price/FormattedPrice') %></div>
+			<br>
+			<br>
+			<div class="amazon-go btn"><a href='<%= item.get ('DetailPageURL') %>'>Shop Now</a></div>
+		</div>
+		<% end %>
+		<% end %>
 	</section>
-
 </div>

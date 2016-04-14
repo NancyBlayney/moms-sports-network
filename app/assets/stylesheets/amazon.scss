@@ -6,7 +6,17 @@
 .filters{
 	width: 25%;
 	float: left;
+	border: 1px solid $border;
+	text-align: center;
+	#filter-list{
+		display: none;
+	}
+	.filter{
+		width: 90%;
+		margin: 0 auto;
+	}
 }
+
 
 .display{
 	border: 1px solid $border;
@@ -67,6 +77,3 @@
 	}
 }
 
-.display{
-
-}

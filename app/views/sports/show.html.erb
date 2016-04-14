@@ -4,15 +4,7 @@
 	</div>
 	<section class="sports-nav">
 		<div class="sports-nav-bar">
-			<div class="dropdown">
-				<button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown"><%= @sport.name %>
-				<span class="caret"></span></button>
-				<ul class="dropdown-menu">
-					<% @sports.each do |sport| %>
-						<li><a href="/sports/<%= sport.id %>"><%= sport.name %></a></li>
-					<% end %>
-				</ul>
-			</div>
+			<%= render 'shared/sportlist' %>
 		</div>
 		<div class="side-nav">
 			<a href="#" id="overview"><h2>Overview</h2></a>
