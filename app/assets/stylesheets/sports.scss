@@ -4,9 +4,9 @@
 @import "colors";
 
 .sport-header{
-	width: 10vw;
+	width: 50vw;
 	font-size: 3.5vw;
-	position: fixed;
+	position: absolute;
 	top: 13px;
 	left: 43vw;
 	overflow: visible;
@@ -62,6 +62,11 @@
 	}
 }
 
+#render-place{
+	border: 1px solid $border;
+	padding: 2%;
+	min-height: 50vh;
+}
 
 .partial {
 	display: none;

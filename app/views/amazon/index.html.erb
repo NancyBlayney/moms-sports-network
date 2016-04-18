@@ -1,6 +1,9 @@
 <div class="page amazon-page">
+	<div class="sport-header">
+		Gear up below!
+	</div>
 	<section class="filters">
-		<h4>Useful Filters</h4>
+		<h4>Useful Filters <i class="fa fa-plus" aria-hidden="true"></i><i class="fa fa-times" aria-hidden="true"></i></h4>
 		<div id="amazon-form">
 			<%= form_tag("/amazon", method: "get", action: 'index') do %>
 				<div id="filter-list">
@@ -46,8 +49,10 @@
 					</select>
 				</div>
 				<%= label_tag(:amazon_search, "Search for:") %>
-				<%= text_field_tag(:amazon_search) %><br><br>
-				<%= submit_tag("Search") %>
+				<%= text_field_tag(:amazon_search) %><i class="fa fa-times-circle" aria-hidden="true"></i>
+				<br>
+				<br>
+				<%= submit_tag("Search", :class=>"btn-amazon") %>
 			<% end %>
 		</div>
 	</section>

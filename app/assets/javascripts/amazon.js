@@ -1,5 +1,23 @@
 $(document).ready(function(){
 
+
+	$('.fa-plus').click(function(){
+		$('.fa-plus').hide();
+		$('.fa-times').show();
+		$('#filter-list').show();
+	});
+
+	$('.fa-times').click(function(){
+		$('.fa-times').hide();
+		$('.fa-plus').show();
+		$('#filter-list').hide();
+	});
+
+	$('.fa-times-circle').click(function(){
+		$('.filter').val("")
+		$('#amazon_search').val("")
+	});
+
 	$('.filter').on('change', function(){
 		sport = $('.sport-filter').val();
 		position = $('.position-filter').val();

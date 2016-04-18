@@ -9,6 +9,15 @@ class SportsController < ApplicationController
 		@rules = @sport.rules
 		@garbs = @sport.garbs
 		@gears = @sport.gears
+		if @sport.quiz != nil
+			@quiz = @sport.quiz
+			@questions = @quiz.questions
+			@question = Question.find(params[:id])
+			@answers = @question.answers
+			@correctanswer = @question.correctanswer	
+		end
 	end
 	
+
+
 end

@@ -10,6 +10,43 @@
 	min-height: 60vh;
 }
 
+.home-page{
+	border: 1px solid $border;
+	border-radius: 25px;
+	padding: 1%;
+	min-height: 60vh;
+}
+
+.pick-sport{
+	max-width: 340px;
+	margin: 0 auto;
+}
+
+#logo {
+	max-width: 300px;
+	background-color: $white;
+	padding-left: 10%;
+	font-family: 'Rock Salt', cursive;
+	h2 {
+		padding: 0;
+		margin: 0;
+	}
+	a {
+		display: inline-block;
+		height: 100%;
+		width: 100%;
+		color: #2f3234;
+		padding: 10px 20px;
+		&:link{
+			text-decoration: none;
+		}
+		&:visited{
+			color: #2f3234;
+		}
+	}
+}
+
+
 
 nav {
 	background-color: $green;
@@ -38,15 +75,6 @@ nav {
 	}
 }
 
-#logo {
-	background-color: $white;
-	padding-left: 10%;
-	font-family: 'Rock Salt', cursive;
-	h2 {
-		padding: 0;
-		margin: 0;
-	}
-}
 
 
 

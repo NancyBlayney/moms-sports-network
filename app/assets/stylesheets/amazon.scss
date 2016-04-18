@@ -3,13 +3,36 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
+.page {
+	margin-top: 1%;
+	
+}
+
 .filters{
 	width: 25%;
 	float: left;
 	border: 1px solid $border;
 	text-align: center;
+	.btn-amazon{
+	  background: #ABA0FF;
+  	border-color: #55507f;
+  	margin-bottom: 6%;
+	}
+	.fa {
+		position: relative;
+		left: 1vw;
+		color: $green;
+		&:hover {
+			cursor: pointer;
+			color: $hovergreen;
+		}
+	}
+	.fa-times {
+		display: none;
+	}
 	#filter-list{
 		display: none;
+		margin-bottom: 3%;
 	}
 	.filter{
 		width: 90%;
@@ -20,7 +43,6 @@
 
 .display{
 	border: 1px solid $border;
-	margin-top: 1%;
 	min-height: 50vh;
 	width: 74%;
 	float: right;

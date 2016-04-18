@@ -1,10 +1,9 @@
-ActiveAdmin.register Sign do
+ActiveAdmin.register Question do
 
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
-permit_params :sport_id, :rule_id, :gif, :name
-#
+permit_params :quiz_id, :name, :body, :image
 # or
 #
 # permit_params do

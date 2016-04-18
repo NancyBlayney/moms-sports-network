@@ -1,12 +1,16 @@
 $(document).ready(function(){
 
 	$(window).ready(function(){
-		$('.overviewp').show();
+		$('.quizp').show();
 	})
 
 	$('#overview').click(function(){
 		$('.partial').hide();
 		$('.overviewp').show();
+	});
+	$('#quiz').click(function(){
+		$('.partial').hide();
+		$('.quizp').show();
 	});
 	$('#garb').click(function(){
 		$('.partial').hide();

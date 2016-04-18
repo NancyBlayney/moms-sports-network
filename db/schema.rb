@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160414151348) do
+ActiveRecord::Schema.define(version: 20160414202450) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string   "namespace"
@@ -46,6 +46,24 @@ ActiveRecord::Schema.define(version: 20160414151348) do
   add_index "admin_users", ["email"], name: "index_admin_users_on_email", unique: true
   add_index "admin_users", ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
 
+  create_table "answers", force: :cascade do |t|
+    t.integer  "quiz_id"
+    t.integer  "question_id"
+    t.string   "body"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "correct"
+    t.integer  "sport_id"
+    t.string   "name"
+  end
+
+  create_table "correctanswers", force: :cascade do |t|
+    t.integer  "question_id"
+    t.integer  "answer_id"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
+
   create_table "garbs", force: :cascade do |t|
     t.integer  "sport_id"
     t.string   "title"
@@ -72,17 +90,35 @@ ActiveRecord::Schema.define(version: 20160414151348) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "questions", force: :cascade do |t|
+    t.integer  "quiz_id"
+    t.text     "body"
+    t.string   "image"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.string   "name"
+  end
+
+  create_table "quizzes", force: :cascade do |t|
+    t.integer  "sport_id"
+    t.string   "name"
+    t.integer  "length"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
   create_table "rules", force: :cascade do |t|
     t.integer  "sport_id"
     t.text     "body"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string   "name"
   end
 
   create_table "signs", force: :cascade do |t|
     t.integer  "sport_id"
     t.integer  "rule_id"
-    t.string   "caption"
+    t.string   "name"
     t.string   "gif"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
