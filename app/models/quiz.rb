@@ -5,14 +5,14 @@ class Quiz < ActiveRecord::Base
 
 
 
-	def initialize(sport)
-		@sport = sport
-		@questions = @sport.questions
-		@answers = @sport.answers
+	# def initialize(sport)
+	# 	@sport = sport
+	# 	@questions = @sport.questions
+	# 	@answers = @sport.answers
 
 
 
-	end
+	# end
 
 
 
