@@ -6,6 +6,7 @@ class Sport < ActiveRecord::Base
 	has_many :positions
 	has_one :quiz
 	has_many :answers
+	
 
 
 	POSITIONS = []
