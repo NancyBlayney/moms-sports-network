@@ -1,7 +1,7 @@
 $(document).ready(function(){
 
 	$(window).ready(function(){
-		$('.quizp').show();
+		$('.overviewp').show();
 	})
 
 	$('#overview').click(function(){

@@ -6,10 +6,17 @@
 .quizlet {
 	max-width: 500px;
 	margin: 0 auto;
+	.grading {
+		padding: 1%;
+	}
 	#your-score{
 		max-height: 100px;
 		margin-top: 3%;
 		margin-bottom: 6%;
+	}
+	.question-body{
+		font-size: 1.1em;
+		font-weight: 600;
 	}
 }
 
@@ -19,7 +26,7 @@
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid green;
-	color: green;
+	// color: green;
 }
 
 .wrong-answer p{
@@ -27,6 +34,6 @@
   padding: 3px 0px 3px 3px;
   margin: 5px 1px 3px 0px;
   border: 1px solid red;
-	color: green;
-	color: red;
+	// color: green;
+	// color: red;
 }

@@ -25,7 +25,7 @@ $(document).ready(function(){
 		gender = $('.gender-filter').val();
 		item = $('.item-filter').val();
 		if (age == 'toddler'){ 
-			$('#amazon_search').val(sport + " " + position +  " " + item)
+			$('#amazon_search').val(sport + " " + position +  "toddler" + item)
 			return
 		} else if ((age == 'kids') && (gender == 'mens')){
 			$('#amazon_search').val(sport + " " + position + " " + "boys" + " " + item)

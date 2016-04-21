@@ -7,11 +7,11 @@
 	margin-top: 1%;
 	
 }
-
+ 
 .filters{
 	width: 25%;
 	float: left;
-	border: 1px solid $border;
+	border: $grayborder;
 	text-align: center;
 	.btn-amazon{
 	  background: #ABA0FF;
@@ -42,7 +42,7 @@
 
 
 .display{
-	border: 1px solid $border;
+	border: $grayborder;
 	min-height: 50vh;
 	width: 74%;
 	float: right;
@@ -57,7 +57,7 @@
 	margin: 2%;
 	padding: 2vh;
 	width: 190px;
-	border: 1px solid $border;
+	border: $grayborder;
 	border-radius: 10px;
 	overflow: hidden;
 	text-align: center;

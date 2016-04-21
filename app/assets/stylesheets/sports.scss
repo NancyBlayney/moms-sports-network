@@ -7,8 +7,8 @@
 	width: 50vw;
 	font-size: 3.5vw;
 	position: absolute;
-	top: 13px;
-	left: 43vw;
+	top: 25px;
+	left: 41vw;
 	overflow: visible;
 	font-family: 'Coda', cursive;
 }
@@ -19,11 +19,11 @@
 	float: left;
 }
 
-.side-nav{
+.side-nav, #bootstrap-overrides{
 	margin-top: 10px;
-	border-right: 1px solid $border;
-	border-bottom: 1px solid $border;
-	border-left: 1px solid $border;
+	border-right:$border;
+	border-bottom:$border;
+	border-left:$border;
 	border-radius: 10px;
 	overflow: hidden;
 	h2{
@@ -31,7 +31,6 @@
 		font-size: 12px;
 	}
 	a:link{
-		border-top:1px solid $border;
 		padding: 2vh;
 		display: block;
 		text-decoration: none;
@@ -48,7 +47,9 @@
 		}
 	}
 }
-
+#bootstrap-overrides a {
+	border-top: $border;
+}
 
 
 .sports-content{
@@ -63,7 +64,7 @@
 }
 
 #render-place{
-	border: 1px solid $border;
+	border: $border;
 	padding: 2%;
 	min-height: 50vh;
 }

@@ -3,12 +3,12 @@ Rails.application.routes.draw do
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
   root to: 'home#index'
-  get '/news' => 'home#news'
   get '/about' => 'home#about'
   get '/sports' => 'home#sports'
   get '/forum' => 'forum#index'
   resources :sports
-  resources :amazon
+  resources :amazon, :only => [:index]
+  resources :news, :only => [:index]
   get '/check' => 'sports#check'
   post '/check' => 'sports#check'
   # The priority is based upon order of creation: first created -> highest priority.

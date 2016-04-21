@@ -10,7 +10,5 @@ class HomeController < ApplicationController
 	def sports
 	end
 
-	def news
-	end
 
 end
