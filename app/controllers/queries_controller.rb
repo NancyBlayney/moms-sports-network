@@ -15,7 +15,11 @@ class QueriesController < ApplicationController
 
 	def show
 		@query = Query.find(params[:id])
-		@comments = @query.comments
+		if @query.approved == true
+			@comments = @query.comments
+		else 
+			redirect_to forum_path
+		end
 	end
 
 

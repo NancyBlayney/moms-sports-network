@@ -1,5 +1,14 @@
-<%= @query.title %>
-<%= @query.body %>
-<% @comments.each do |c| %>
-	<%= c.body %>
-<% end %>
+<div class="page query-page">
+	<%= link_to '<< Back', forum_path %>
+	<div id="query">
+		<header><h2><%= @query.title %></h2></header>
+		<div id="query-body">
+			<%= @query.body %>
+		</div>
+		<section class="comments-list">
+			<% @comments.each do |c| %>
+				<div class="comment-show"><%= c.body %></div>
+			<% end %>
+		</section>
+	</div>
+</div>

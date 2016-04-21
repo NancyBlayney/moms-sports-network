@@ -2,9 +2,18 @@
 
 	<div id="query-list">
 		<% @queries.each do |q| %>
-			<a href="/queries/<%=q.id%>"><%= q.title %></a>
+			<% if q.approved == true %>
+				<a href="/queries/<%=q.id%>" class="query-title"><%= q.title %></a>
+				<em>
+					<% if q.comments.length == 1 %>
+						(<%= q.comments.length %> response)
+					<% else %>
+						(<%= q.comments.length %> responses)
+					<br>
+				<% end %>
+				</em>
+			<% end %>
 		<% end %>
-		
 	</div>
 
 
@@ -13,8 +22,10 @@
 		<div class="query-form">
 		<%= semantic_form_for @query do |f| %>
 		  <%= f.inputs do %>
+		  	<%= f.input :user_id %>
 		    <%= f.input :title, label: 'Subject' %>
 		    <%= f.input :body, label: 'Question', input_html: { rows: 10 } %>
+		    <%= f.input :sport_id, as: :select, collection: Sport.pluck(:name), label: 'Pick a sport(optional)' %>
 		  <% end %>
 		  
 		  <%= f.actions do %>
