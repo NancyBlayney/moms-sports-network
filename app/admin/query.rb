@@ -13,5 +13,4 @@ permit_params :user_id, :title, :body, :approved, :sport_id
 #   permitted
 # end
 
-
 end

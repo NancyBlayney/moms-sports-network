@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/about' => 'home#about'
   get '/sports' => 'home#sports'
   get '/forum' => 'forum#index'
+  resources :queries
   resources :sports
   resources :amazon, :only => [:index]
   resources :news, :only => [:index]

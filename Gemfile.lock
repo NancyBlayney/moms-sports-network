@@ -225,6 +225,7 @@ DEPENDENCIES
   coffee-rails (~> 4.1.0)
   devise
   font-awesome-rails
+  formtastic (~> 3.1)
   jbuilder (~> 2.0)
   jquery-rails
   jquery-turbolinks

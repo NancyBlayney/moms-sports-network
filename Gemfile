@@ -6,6 +6,7 @@ gem "font-awesome-rails"
 gem 'jquery-turbolinks'
 gem 'bootstrap-sass', '~> 3.2.0'
 gem 'autoprefixer-rails'
+gem 'formtastic', '~> 3.1'
 
 gem 'json', '1.8.2'
 
