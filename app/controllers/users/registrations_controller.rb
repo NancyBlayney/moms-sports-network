@@ -2,10 +2,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
 # before_filter :configure_sign_up_params, only: [:create]
 # before_filter :configure_account_update_params, only: [:update]
 
-  GET /users/sign_up
-  def new
-    super
-  end
+  # GET /users/sign_up
+  # def new
+  #   super
+  # end
 
   # POST /resource
   # def create
