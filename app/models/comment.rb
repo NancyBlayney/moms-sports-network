@@ -1,6 +1,5 @@
 class Comment < ActiveRecord::Base
-	belongs_to :user
-	belongs_to :admin_user
+	belongs_to :member
 	belongs_to :query
 
 end

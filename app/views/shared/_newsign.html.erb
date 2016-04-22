@@ -1,0 +1,16 @@
+<div class="form-partial sign-form">
+<h3>New Sign</h3>
+<%= semantic_form_for @sign do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :sport_id, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
+    <%= f.input :rule_id, as: :select, collection: Rule.pluck(:name, :id), label: 'Rule', hint: 'Which rule is this gif associated with?' %>
+    <%= f.input :name %>
+    <%= f.input :gif %>
+  <% end %>
+  
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+
+<% end %>
+</div>

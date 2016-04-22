@@ -1,0 +1,15 @@
+<div class="form-partial sport-form">
+<h3>New Sport</h3>
+<%= semantic_form_for @sport do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :name %>
+    <%= f.input :image, hint: "Copy the URL here"%>
+    <%= f.input :description, as: :text %>
+  <% end %>
+  
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+
+<% end %>
+</div>

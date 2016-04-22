@@ -3,6 +3,28 @@ class SportsController < ApplicationController
 
 	end
 
+
+	def new
+		@sport = Sport.new
+	end
+
+	def create
+		@sport = Sport.create(sport_params)
+		if @sport.save
+			flash[:notice] = "success"
+			redirect_to admin_path
+		else
+			flash[:notice] = "failure"
+			redirect_to admin_path
+		end
+	end
+
+	def edit
+	end
+
+	def update
+	end
+
 	def show
 		@sports = Sport.all
 		@sport = Sport.find(params[:id])
@@ -18,6 +40,12 @@ class SportsController < ApplicationController
 		end
 	end
 	
+
+	private
+
+	def sport_params
+		params.require(:sport).permit(:name, :description, :image)
+	end
 
 
 end

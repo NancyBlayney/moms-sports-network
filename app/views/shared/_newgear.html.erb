@@ -1,0 +1,16 @@
+<div class="form-partial gear-form">
+<h3>New Gear</h3>
+<%= semantic_form_for @gear do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :sport_id, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
+    <%= f.input :title %>
+    <%= f.input :body, input_html: { rows: 10 } %>
+    <%= f.input :link %>
+  <% end %>
+  
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+
+<% end %>
+</div>

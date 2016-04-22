@@ -1,0 +1,17 @@
+<div class="form-partial answer-form">
+  <h3>New Answer</h3>
+<%= semantic_form_for @answer do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :quiz_id, as: :select, collection: Quiz.pluck(:name, :id), label: 'Which quiz?' %>
+    <%= f.input :question_id, as: :select, collection: Question.pluck(:name, :id), label: "Question", hint: 'What question does this answer?' %>
+    <%= f.input :name %>
+    <%= f.input :body %>
+    <%= f.input :correct, as: :boolean, hint: "Only check this box is this is the CORRECT answer" %>
+  <% end %>
+  
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+
+<% end %>
+</div>

@@ -1,25 +1,25 @@
 Rails.application.routes.draw do
 
   devise_for :members
-  devise_for :users, ActiveAdmin::Devise.config
-  devise_for :admin_users, ActiveAdmin::Devise.config
-  ActiveAdmin.routes(self)
   root to: 'home#index'
   get '/about' => 'home#about'
   get '/sports' => 'home#sports'
   get '/forum' => 'forum#index'
+  get '/admin' => 'admin#index'
   resources :queries
   resources :sports
+  resources :quizzes
+  resources :questions
+  resources :answers
+  resources :rules
+  resources :gears
+  resources :garbs
+  resources :signs
   resources :amazon, :only => [:index]
   resources :news, :only => [:index]
   get '/check' => 'sports#check'
   post '/check' => 'sports#check'
   
-  # devise_scope :user do
-  #   get '/users/sign_up' => 'devise/registrations#new'
-  #   post '/users/sign_up' => 'devise/registrations#create'
-  #   get '/users/sign_out' => 'devise/sessions#destroy'
-  # end
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -1,0 +1,2 @@
+module GarbsHelper
+end

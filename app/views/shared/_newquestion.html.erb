@@ -1,0 +1,16 @@
+<div class="form-partial question-form">
+<h3>New Question</h3>
+<%= semantic_form_for @question do |f| %>
+  <%= f.inputs do %>
+    <%= f.input :quiz_id, as: :select, collection: Quiz.pluck(:name, :id), label: 'Quiz', hint: 'Which quiz is this question associated with?' %>
+    <%= f.input :name %>
+    <%= f.input :body %>
+    <%= f.input :image, hint: 'Copy URL here' %>
+  <% end %>
+  
+  <%= f.actions do %>
+    <%= f.action :submit, :as => :input %>
+  <% end %>
+
+<% end %>
+</div>

@@ -1,0 +1,37 @@
+// Place all the styles related to the admin controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+@import "colors";
+
+.form-partial{
+	display: none;
+	width: 90%;
+	margin: 0 auto;
+	padding: 4%;
+	h3{
+		margin-top: 0;
+		text-align: center;
+		margin-bottom: 8%;
+	}
+	.label{
+		color: black;
+	}
+	
+
+}
+
+.new {
+	border: $border;
+}
+
+.admin-forms-list{
+	width: 28%;
+	float: left;
+}
+
+.admin-forms-display{
+	width: 70%;
+	float: right;
+	border: $border;
+	min-height: 50vh;
+}
