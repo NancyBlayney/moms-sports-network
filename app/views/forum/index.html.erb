@@ -16,13 +16,13 @@
 		<% end %>
 	</div>
 
-
+ <% if current_member != nil && current_member.admin == true %>
 	<div id="sidebar">
 		<h3>Want to start a conversation? Ask a question below and our coaches will get back to you!</h3>
 		<div class="query-form">
 		<%= semantic_form_for @query do |f| %>
 		  <%= f.inputs do %>
-		  	<%= f.input :user_id %>
+		  	<%= f.input :user_id, as: :hidden %>
 		    <%= f.input :title, label: 'Subject' %>
 		    <%= f.input :body, label: 'Question', input_html: { rows: 10 } %>
 		    <%= f.input :sport_id, as: :select, collection: Sport.pluck(:name), label: 'Pick a sport(optional)' %>
@@ -35,7 +35,7 @@
 		<% end %>
 		</div>
 	</div>
-
+<% end %>
 
 
 

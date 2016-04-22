@@ -2,11 +2,18 @@
 	<h2>The Rules</h2>
 	<ul>
 	<% @rules.each do |rule| %>
-		<li><%= rule.body %><br>
+		<li><%= rule.body %> 
+		<% if current_member != nil && current_member.admin == true %>
+			- <%= link_to 'Edit Rule', edit_rule_path(rule) %>
+		<% end %>
+			<br>
 		<% if rule.signs != nil %>
 			<% rule.signs.each do |sign| %>
 				<strong><%= sign.name %> -</strong><br>
-				<iframe src="<%= sign.gif %>" width="300" height="168" frameBorder="0"></iframe></li>
+				<iframe src="<%= sign.gif %>" width="300" height="168" frameBorder="0"></iframe>
+				<% if current_member != nil && current_member.admin == true %>
+					 - <%= link_to 'Edit Gif', edit_sign_path(sign) %></li>
+				 <% end %>
 			<% end %>
 		<% end %>
 		<br>

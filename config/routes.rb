@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   get '/sports' => 'home#sports'
   get '/forum' => 'forum#index'
   get '/admin' => 'admin#index'
+  get '/admin/new' => 'admin#new'
   resources :queries
   resources :sports
   resources :quizzes

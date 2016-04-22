@@ -18,6 +18,9 @@
 	<header id="logo">
 		<a href="/" class="logo"><h2>Moms <br>Sports <br>Network</h2></a>
 	</header>
+	<% if current_member != nil && current_member.admin == true %>
+	<%= link_to 'Admin Portal >>', '/admin/new', :class => 'admin-link' %>
+	<% end %>
 	<nav id="main-nav">
 		<ul>
 			<li><%=link_to 'Home', root_path, :class => 'fill' %></li>

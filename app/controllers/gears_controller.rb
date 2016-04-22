@@ -7,13 +7,32 @@ class GearsController < ApplicationController
 		@gear = Gear.create(gear_params)
 		if @gear.save
 			flash[:notice] = "success"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		else
 			flash[:notice] = "failure"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		end
 	end
 
+	def edit
+		if current_member != nil && current_member.admin == true
+			@gear = Gear.find(params[:id])
+		end
+	end
+
+	def update
+		if current_member != nil && current_member.admin == true
+			@gear = Gear.find(params[:id])
+			@gear.update(gear_params)
+			if @gear.save
+				flash[:notice] = "Success"
+				redirect_to sport_path
+			else
+				flash[:notice] = "failure"
+				redirect_to :back
+			end
+		end
+	end
 
 
 	private

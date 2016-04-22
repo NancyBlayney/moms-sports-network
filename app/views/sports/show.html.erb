@@ -1,6 +1,9 @@
 <div class="page sport-show-page">
 	<div class="sport-header">
 		<%= @sport.name %>
+		<% if current_member != nil && current_member.admin == true %>
+			 - <%= link_to 'Edit Sport', edit_sport_path(@sport) %>
+		 <% end %>
 	</div>
 	<section class="sports-nav">
 		<div class="sports-nav-bar">

@@ -2,9 +2,9 @@
 <h3>New Rule</h3>
 <%= semantic_form_for @rule do |f| %>
   <%= f.inputs do %>
-    <%= f.input :sport_id, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
+    <%= f.input :sport_id, :include_blank => false, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
     <%= f.input :name %>
-    <%= f.input :body %>
+    <%= f.input :body, input_html: { rows: 10 } %>
   <% end %>
   
   <%= f.actions do %>

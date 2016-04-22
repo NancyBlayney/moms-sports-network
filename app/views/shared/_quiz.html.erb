@@ -4,15 +4,27 @@
 		<div id="your-score"></div>
 		<%= form_tag('/check', :id => 'quiz-form', remote: true) do %>
 			<% @questions.each do |q| %>
-				<div class="grading"><p class="question-body"> <%= q.body %></p>
+				<div class="grading">
+					<p class="question-body"> 
+						<%= q.body %> 
+						<% if current_member != nil && current_member.admin == true %> 
+							<%= link_to 'Edit Question', edit_question_path(q) %>
+						<% end %>
+					</p>
 					<% q.answers.each do |a| %>
 						<article class="answer">
 							<% if a.correct == true %>
 								<%= radio_button_tag("question_#{q.id}", "#{a.correct}")%>
 								<%= label_tag("question_#{q.id}_#{a.correct}", "#{a.body}") %>
+								<% if current_member != nil && current_member.admin == true %>
+								 - <%= link_to 'Edit Answer', edit_answer_path(a) %>
+								 <% end %>
 							<% else %>
 								<%= radio_button_tag("question_#{q.id}", "#{a.correct}") %>
 								<%= label_tag("question_#{q.id}_#{a.correct}", "#{a.body}") %>
+								<% if current_member != nil && current_member.admin == true %> 
+								- <%= link_to 'Edit Answer', edit_answer_path(a) %>
+								<% end %>
 							<% end %>
 						</article>
 					<% end %>

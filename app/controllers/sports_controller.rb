@@ -12,17 +12,31 @@ class SportsController < ApplicationController
 		@sport = Sport.create(sport_params)
 		if @sport.save
 			flash[:notice] = "success"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		else
 			flash[:notice] = "failure"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		end
 	end
 
 	def edit
+		if current_member != nil && current_member.admin == true
+			@sport = Sport.find(params[:id])
+		end
 	end
 
 	def update
+		if current_member != nil && current_member.admin == true
+			@sport = Sport.find(params[:id])
+			@sport.update(sport_params)
+			if @sport.save
+				flash[:notice] = "Success"
+				redirect_to sport_path
+			else
+				flash[:notice] = "failure"
+				redirect_to :back
+			end
+		end
 	end
 
 	def show
@@ -34,9 +48,6 @@ class SportsController < ApplicationController
 		if @sport.quiz != nil
 			@quiz = @sport.quiz
 			@questions = @quiz.questions
-			@question = Question.find(params[:id])
-			@answers = @question.answers
-			@correctanswer = @question.correctanswer	
 		end
 	end
 	

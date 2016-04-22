@@ -3,7 +3,14 @@
 	<% @garbs.each do |garb| %>
 		<hr />
 		<section class="sport-section">
-			<div class="sport-title"><h4><%= garb.title %></h4></div>
+			<div class="sport-title"><h4><%= garb.title %>
+				<% if current_member != nil && current_member.admin == true %>
+			 - <%= link_to 'Edit Item', edit_garb_path(garb) %>
+			 <% end %>
+			 </h4>
+			 
+			 </div>
+
 			<div class="sport-body">
 				<%= garb.body %>
 				<% if garb.link.length > 1 %>

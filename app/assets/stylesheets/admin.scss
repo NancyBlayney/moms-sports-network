@@ -5,13 +5,17 @@
 
 .form-partial{
 	display: none;
+}
+
+.form-partial, .edit-form{
 	width: 90%;
 	margin: 0 auto;
 	padding: 4%;
 	h3{
-		margin-top: 0;
+		margin: 0;
 		text-align: center;
 		margin-bottom: 8%;
+		text-decoration: underline;
 	}
 	.label{
 		color: black;
@@ -22,16 +26,22 @@
 
 .new {
 	border: $border;
+	padding: 3%;
+	text-align: center;
 }
 
 .admin-forms-list{
 	width: 28%;
 	float: left;
+	h2{
+		margin: 0;
+	}
 }
 
 .admin-forms-display{
 	width: 70%;
 	float: right;
 	border: $border;
-	min-height: 50vh;
+	min-height: 55vh;
+	margin-bottom: 50px;
 }

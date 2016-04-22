@@ -10,6 +10,16 @@
 	min-height: 60vh;
 }
 
+.admin-link{
+	border: $border;
+	padding: 2%;
+	position: fixed;
+	top: 0;
+	right: 0;
+	background-color: #ABA0FF;
+
+}
+
 .home-page{
 	border: $border;
 	border-radius: 25px;

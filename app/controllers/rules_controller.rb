@@ -7,14 +7,32 @@ class RulesController < ApplicationController
 		@rule = Rule.create(rule_params)
 		if @rule.save
 			flash[:notice] = "success"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		else
 			flash[:notice] = "failure"
-			redirect_to admin_path
+			redirect_to '/admin/new'
 		end
 	end
 
+	def edit
+		if current_member != nil && current_member.admin == true
+			@rule = Rule.find(params[:id])
+		end
+	end
 
+	def update
+		if current_member != nil && current_member.admin == true
+			@rule = Rule.find(params[:id])
+			@rule.update(rule_params)
+			if @rule.save
+				flash[:notice] = "Success"
+				redirect_to sport_path
+			else
+				flash[:notice] = "failure"
+				redirect_to :back
+			end
+		end
+	end
 
 	private
 
