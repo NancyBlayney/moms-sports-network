@@ -26,6 +26,12 @@
 			<li><%=link_to 'Sports', sports_path, :class => 'fill'  %></li>
 			<li><%=link_to 'News', news_index_path, :class => 'fill'  %></li>
 			<li id="last-item"><%=link_to 'Forum', forum_path %></li>
+			<% if current_member == nil %>
+			<li><%=link_to 'Sign Up', new_member_registration_path, :class => 'fill'  %></li>
+			<li><%=link_to 'Sign In', new_member_session_path, :class => 'fill'  %></li>
+			<% else %>
+			<li><%=link_to 'Log Out', destroy_member_session_path, method: :delete, :class => 'fill'  %></li>
+			<% end %>
 		</ul>
 	</nav>
 
