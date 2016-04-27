@@ -51,6 +51,18 @@ class SportsController < ApplicationController
 		end
 	end
 	
+	def destroy
+	  @sport = Sport.find(params[:id])
+	  if @sport.destroy
+	  	flash[:notice] = "Successfully deleted."
+	  	redirect_to admin_path
+	  else
+	  	flash[:notice] = "There was an error with your request."
+	  	redirect_to admin_path
+	  end
+	end
+
+
 
 	private
 

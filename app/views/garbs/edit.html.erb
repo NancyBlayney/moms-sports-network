@@ -1,5 +1,5 @@
 <div class="edit-form edit-garb-form">
-<h3>New Garb</h3>
+<h3>Edit Garb</h3>
 <%= semantic_form_for @garb do |f| %>
   <%= f.inputs do %>
     <%= f.input :sport_id, :include_blank => false, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
@@ -13,4 +13,5 @@
   <% end %>
 
 <% end %>
+<%= link_to 'Delete Garb', garb_path(@garb), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
 </div>

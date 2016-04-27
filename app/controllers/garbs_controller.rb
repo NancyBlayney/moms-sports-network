@@ -35,6 +35,16 @@ class GarbsController < ApplicationController
 		end
 	end
 
+	def destroy
+	  @garb = Garb.find(params[:id])
+	  if @garb.destroy
+	  	flash[:notice] = "Successfully deleted."
+	  	redirect_to admin_path
+	  else
+	  	flash[:notice] = "There was an error with your request."
+	  	redirect_to admin_path
+	  end
+	end
 
 
 	private

@@ -1,5 +1,5 @@
 <div class="edit-form edit-sport-form">
-<h3>New Sport</h3>
+<h3>Edit Sport</h3>
 <%= semantic_form_for @sport do |f| %>
   <%= f.inputs do %>
     <%= f.input :name %>
@@ -12,4 +12,5 @@
   <% end %>
 
 <% end %>
+<%= link_to 'Delete Sport', sport_path(@sport), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
 </div>

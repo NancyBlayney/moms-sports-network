@@ -34,6 +34,16 @@ class SignsController < ApplicationController
 		end
 	end
 
+	def destroy
+	  @sign = Sign.find(params[:id])
+	  if @sign.destroy
+	  	flash[:notice] = "Successfully deleted."
+	  	redirect_to admin_path
+	  else
+	  	flash[:notice] = "There was an error with your request."
+	  	redirect_to admin_path
+	  end
+	end
 
 	private
 

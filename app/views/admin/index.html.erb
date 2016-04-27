@@ -1,5 +1,57 @@
 <% @sports.each do |sport|%>
-	<%= sport.name %>
-
-	<br>
+	<div class="admin-sport-name">
+		<div class="this-name"><h1><%= sport.name %></h1></div>
+		<div class="admin-rules-view a-view">
+		<div class="admin-click"><h4>Rules</h4></div>
+		<% sport.rules.each do |rule|%>
+			<div class="admin-rule ad-view">
+				<div class="rule-name"><%= rule.name %></div>
+				<div class="rule-body"><%= rule.body%></div>
+				<% if rule.sign != nil %>
+					<div class="rule-gif"><%= rule.sign.gif %></div>
+				<% end %>
+			</div>
+			<% end %>
+		</div>
+		<div class="admin-garbs-view a-view">
+			<div class="admin-click"><h4>Garb</h4></div>
+			<% sport.garbs.each do |garb|%>
+			<div class="admin-garb ad-view">
+				<div class="garb-title"><%= garb.title %></div>
+				<div class="garb-body"><%= garb.body %></div>
+			</div>
+			<% end %>
+		</div>
+		<div class="admin-gears-view a-view">
+			<div class="admin-click"><h4>Gear</h4></div>
+			<% sport.gears.each do |gear|%>
+			<div class="admin-gear ad-view">
+				<div class="gear-title"><%= gear.title %></div>
+				<div class="gear-body"><%= gear.body %></div>
+			</div>
+			<% end %>
+		</div>
+		<div class="admin-signs-view a-view">
+			<div class="admin-click"><h4>Signs</h4></div>
+			<% sport.signs.each do |sign|%>
+			<div class="admin-sign ad-view">
+				<%= sign.name %><%= sign.gif %>
+			</div>
+			<% end %>
+		</div>
+		<% if sport.quiz != nil %>
+			<div class="admin-quiz-view a-view">
+				<div class="admin-click"><h4>Quiz</h4></div>
+				<div class="admin-quiz ad-view">
+					<div class="quiz-name"><%= sport.quiz.name %></div>
+						<% sport.quiz.questions.each do |q| %>
+							<div class="question-body"><%= q.body %></div>
+							<% q.answers.each do |a| %>
+								<div class="answer-body"><%= a.body %></div>
+							<% end %>
+					<% end %>
+				</div>
+			</div>
+		<% end %>
+	</div>
 <% end %>

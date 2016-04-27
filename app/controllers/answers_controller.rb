@@ -34,6 +34,16 @@ class AnswersController < ApplicationController
 		end
 	end
 
+	def destroy
+	  @answer = Answer.find(params[:id])
+	  if @answer.destroy
+	  	flash[:notice] = "Successfully deleted."
+	  	redirect_to admin_path
+	  else
+	  	flash[:notice] = "There was an error with your request."
+	  	redirect_to admin_path
+	  end
+	end
 
 
 	private

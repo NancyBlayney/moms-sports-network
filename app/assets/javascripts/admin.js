@@ -40,8 +40,13 @@ $(document).ready(function(){
 		$('.sport-form').show();
 	});
 
+	$('.this-name').click(function(){
+		$(this).parent().find('.a-view').toggle();
+	});
 
-
+	$('.admin-click').click(function(){
+		$(this).parent().find('.ad-view').toggle();
+	});
 
 
 });

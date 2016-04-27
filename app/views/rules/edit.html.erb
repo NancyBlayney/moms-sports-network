@@ -1,5 +1,5 @@
 <div class="edit-form edit-rule-form">
-<h3>New Rule</h3>
+<h3>Edit Rule</h3>
 <%= semantic_form_for @rule do |f| %>
   <%= f.inputs do %>
     <%= f.input :sport_id, :include_blank => false, as: :select, collection: Sport.pluck(:name, :id), label: 'Pick a sport' %>
@@ -12,4 +12,5 @@
   <% end %>
 
 <% end %>
+<%= link_to 'Delete Rule', rule_path(@rule), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
 </div>

@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   get '/forum' => 'forum#index'
   get '/admin' => 'admin#index'
   get '/admin/new' => 'admin#new'
+  get '/admin/sport/:id' => 'admin#sport'
   resources :queries
   resources :sports
   resources :quizzes

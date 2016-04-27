@@ -34,6 +34,19 @@ class RulesController < ApplicationController
 		end
 	end
 
+	def destroy
+	  @rule = Rule.find(params[:id])
+	  if @rule.destroy
+	  	flash[:notice] = "Successfully deleted."
+	  	redirect_to admin_path
+	  else
+	  	flash[:notice] = "There was an error with your request."
+	  	redirect_to admin_path
+	  end
+	end
+
+
+
 	private
 
 	def rule_params

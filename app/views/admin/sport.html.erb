@@ -1,0 +1,37 @@
+<div class="page sport-show-page">
+	<div class="sport-header">
+		<%= @sport.name %>
+		<% if current_member != nil && current_member.admin == true %>
+			 - <%= link_to 'Edit Sport', edit_sport_path(@sport) %>
+		 <% end %>
+	</div>
+	<section class="sports-nav">
+		<div class="sports-nav-bar">
+			<%= render 'shared/sportlist' %>
+		</div>
+		<div class="side-nav" id="bootstrap-overrides">
+			<a href="#" id="overview"><h2>Overview</h2></a>
+			<a href="#" id="rules"><h2>Rules</h2></a>
+			<% if @sport.quiz != nil %>
+				<a href="#" id="quiz"><h2>Quiz</h2></a>
+			<% end %>
+			<a href="#" id="garb"><h2>Garb</h2></a>
+			<a href="#" id="gear"><h2>Gear</h2></a>
+			<a href="#" id="sport-news"><h2>News</h2></a>
+		</div>
+	</section>
+	<section class="sports-content">
+		<div class="sports-main-image">
+			<img src="<%= @sport.image %>">
+		</div>
+		<div id="render-place" data-no-turbolink>
+			<%= render 'shared/rules' %>
+			<%= render 'shared/overview' %>
+			<%= render 'shared/garb' %>
+			<%= render 'shared/gear' %>
+			<% if @sport.quiz != nil %>
+				<%= render 'shared/quiz' %>
+			<% end %>
+		</div>
+	</section>
+</div>

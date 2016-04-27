@@ -1,5 +1,5 @@
 <div class="edit-form edit-question-form">
-<h3>New Question</h3>
+<h3>Edit Question</h3>
 <%= semantic_form_for @question do |f| %>
   <%= f.inputs do %>
     <%= f.input :quiz_id, :include_blank => false, as: :select, collection: Quiz.pluck(:name, :id), label: 'Quiz', hint: 'Which quiz is this question associated with?' %>
@@ -13,4 +13,5 @@
   <% end %>
 
 <% end %>
+<%= link_to 'Delete Question', question_path(@question), method: :delete, data: { confirm: 'Are you certain you want to delete this?' } %>
 </div>

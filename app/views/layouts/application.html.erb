@@ -19,7 +19,7 @@
 		<a href="/" class="logo"><h2>Moms <br>Sports <br>Network</h2></a>
 	</header>
 	<% if current_member != nil && current_member.admin == true %>
-	<%= link_to 'Admin Portal >>', '/admin/new', :class => 'admin-link' %>
+	<%= link_to 'Admin Portal >>', admin_path, :class => 'admin-link' %>
 	<% end %>
 	<nav id="main-nav">
 		<ul>
