@@ -22,6 +22,26 @@ class QueriesController < ApplicationController
 		end
 	end
 
+	def edit
+		if current_member != nil && current_member.admin == true
+			@query = Query.find(params[:id])
+		end
+	end
+
+	def update
+		if current_member != nil && current_member.admin == true
+			@query = Query.find(params[:id])
+			@query.update(query_params)
+			if @query.save
+				flash[:notice] = "Success"
+				redirect_to '/admin/new'
+			else
+				flash[:notice] = "failure"
+				redirect_to '/admin/new'
+			end
+		end
+	end
+
 
 	private
 

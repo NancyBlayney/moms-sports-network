@@ -1,0 +1,13 @@
+<%= link_to '<< Back to Admin Profile', admin_path %>
+<br>
+<br>
+<% @queries.each do |query| %>
+	<% if query.approved == true %>
+		<h3>Approved Queries</h3>
+		<%= query.title %><br>
+	<% else %>
+		<h3>Queries to be reviewed</h3>
+		<%= query.title %>	
+	<% end %>
+
+<% end %>

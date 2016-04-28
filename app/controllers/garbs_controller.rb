@@ -23,11 +23,12 @@ class GarbsController < ApplicationController
 
 	def update
 		if current_member != nil && current_member.admin == true
+			@sport = Sport.find(params[:garb][:sport_id])
 			@garb = Garb.find(params[:id])
 			@garb.update(garb_params)
 			if @garb.save
 				flash[:notice] = "Success"
-				redirect_to sport_path
+				redirect_to sport_path(@sport)
 			else
 				flash[:notice] = "failure"
 				redirect_to :back

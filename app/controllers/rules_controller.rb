@@ -22,11 +22,12 @@ class RulesController < ApplicationController
 
 	def update
 		if current_member != nil && current_member.admin == true
+			@sport = Sport.find(params[:rule][:sport_id])
 			@rule = Rule.find(params[:id])
 			@rule.update(rule_params)
 			if @rule.save
 				flash[:notice] = "Success"
-				redirect_to sport_path
+				redirect_to sport_path(@sport)
 			else
 				flash[:notice] = "failure"
 				redirect_to :back

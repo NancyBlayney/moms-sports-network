@@ -22,11 +22,12 @@ class SignsController < ApplicationController
 
 	def update
 		if current_member != nil && current_member.admin == true
+			@sport = Sport.find(params[:sign][:sport_id])
 			@sign = Sign.find(params[:id])
 			@sign.update(sign_params)
 			if @sign.save
 				flash[:notice] = "Success"
-				redirect_to sport_path
+				redirect_to sport_path(@sport)
 			else
 				flash[:notice] = "failure"
 				redirect_to :back

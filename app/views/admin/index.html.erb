@@ -1,3 +1,5 @@
+<div class="new-element-link"><%= link_to 'Add a New Element', admin_new_path %></div>
+<div class="new-element-link"><%= link_to 'Manage Forum', admin_forum_path %></div>
 <% @sports.each do |sport|%>
 	<div class="admin-sport-name">
 		<div class="this-name"><h1><%= sport.name %></h1></div>
@@ -5,10 +7,13 @@
 		<div class="admin-click"><h4>Rules</h4></div>
 		<% sport.rules.each do |rule|%>
 			<div class="admin-rule ad-view">
-				<div class="rule-name"><%= rule.name %></div>
-				<div class="rule-body"><%= rule.body%></div>
+				<div class="rule-name o-name"><%= rule.name %> - <%= link_to 'Edit Rule', edit_rule_path(rule) %></div>
+				<div class="rule-body o-body"><%= rule.body%></div>
 				<% if rule.sign != nil %>
 					<div class="rule-gif"><%= rule.sign.gif %></div>
+					<hr />
+					<% else %>
+					<hr />
 				<% end %>
 			</div>
 			<% end %>
@@ -17,8 +22,9 @@
 			<div class="admin-click"><h4>Garb</h4></div>
 			<% sport.garbs.each do |garb|%>
 			<div class="admin-garb ad-view">
-				<div class="garb-title"><%= garb.title %></div>
-				<div class="garb-body"><%= garb.body %></div>
+				<div class="garb-title o-name"><%= garb.title %> - <%= link_to 'Edit Garb', edit_garb_path(garb) %></div>
+				<div class="garb-body o-body"><%= garb.body %></div>
+				<hr />
 			</div>
 			<% end %>
 		</div>
@@ -26,8 +32,9 @@
 			<div class="admin-click"><h4>Gear</h4></div>
 			<% sport.gears.each do |gear|%>
 			<div class="admin-gear ad-view">
-				<div class="gear-title"><%= gear.title %></div>
-				<div class="gear-body"><%= gear.body %></div>
+				<div class="gear-title o-name"><%= gear.title %> - <%= link_to 'Edit Gear', edit_gear_path(gear) %></div>
+				<div class="gear-body o-body"><%= gear.body %></div>
+				<hr />
 			</div>
 			<% end %>
 		</div>
@@ -35,19 +42,22 @@
 			<div class="admin-click"><h4>Signs</h4></div>
 			<% sport.signs.each do |sign|%>
 			<div class="admin-sign ad-view">
-				<%= sign.name %><%= sign.gif %>
+				<div class="sign-name o-name"><%= sign.name %> - <%= link_to 'Edit Sign', edit_sign_path(sign) %></div>
+				<div class="sign-gif"><%= sign.gif %></div>
+				<hr />
 			</div>
+
 			<% end %>
 		</div>
 		<% if sport.quiz != nil %>
 			<div class="admin-quiz-view a-view">
 				<div class="admin-click"><h4>Quiz</h4></div>
 				<div class="admin-quiz ad-view">
-					<div class="quiz-name"><%= sport.quiz.name %></div>
+					<div class="quiz-name o-name"><%= sport.quiz.name %></div>
 						<% sport.quiz.questions.each do |q| %>
-							<div class="question-body"><%= q.body %></div>
+							<div class="question-body"><%= q.body %> - <%= link_to 'Edit Question', edit_question_path(q) %></div>
 							<% q.answers.each do |a| %>
-								<div class="answer-body"><%= a.body %></div>
+								<div class="answer-body"><%= a.body %> - <%= link_to 'Edit Answer', edit_answer_path(a) %></div>
 							<% end %>
 					<% end %>
 				</div>

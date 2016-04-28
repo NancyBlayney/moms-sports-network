@@ -1,9 +1,11 @@
 class CommentsController < ApplicationController
 	def new
+		@query = Query.find(params[:id])
 		@comment = Comment.new
 	end
 
 	def create
+		@query = Query.find(params[:id])
 		@comment = Comment.create(comment_params)
 		if @comment.save
 			redirect_to forum_path

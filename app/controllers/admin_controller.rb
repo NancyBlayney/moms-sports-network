@@ -41,8 +41,16 @@ class AdminController < ApplicationController
 				@quiz = @sport.quiz
 				@questions = @quiz.questions
 			end
+		else
+			redirect_to root_path
+		end
+	end
 
-
+	def forum
+		if current_member != nil && current_member.admin == true
+			@queries = Query.all
+			@comments = Comment.all
+			@comment = Comment.new
 		else
 			redirect_to root_path
 		end

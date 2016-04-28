@@ -10,18 +10,8 @@
 	min-height: 60vh;
 }
 
-.admin-link{
-	border: $border;
-	padding: 2%;
-	position: fixed;
-	top: 0;
-	right: 0;
-	background-color: #ABA0FF;
-
-}
-
 .home-page{
-	border: $border;
+	border: $grayborder;
 	border-radius: 25px;
 	padding: 1%;
 	min-height: 60vh;
@@ -34,7 +24,7 @@
 
 #logo {
 	max-width: 300px;
-	background-color: $white;
+	background-color: $gray;
 	padding-left: 10%;
 	font-family: 'Rock Salt', cursive;
 	h2 {
@@ -55,8 +45,6 @@
 		}
 	}
 }
-
-
 
 nav {
 	background-color: $green;
@@ -84,6 +72,54 @@ nav {
 		}
 	}
 }
+
+.sports-page-wrapper{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	.sport-mod {
+		width: 200px;
+		border: $grayborder;
+		margin: 20px;
+		padding: 10px;
+		text-align: center;
+		border-radius: 8px;
+		background-color: #fffbf8;
+		.the-image img{
+			width: 150px;
+		}
+	}
+}
+
+.about-page {
+	h2{
+		text-align: center;
+	}
+	#maggie {
+		text-align: center;
+		#maggie-image img{
+			border-radius: 50%;
+		}
+	}
+	#profile-wrapper{
+		display: flex;
+		justify-content: center;
+		.profile{
+			width: 30%;
+			margin: 1.5%;
+			text-align: center;
+			.image-profile img{
+				border-radius: 50%;
+				width: 200px;
+			}
+		}
+	}
+}
+
+
+
+
+
 
 
 

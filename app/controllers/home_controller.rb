@@ -8,6 +8,7 @@ class HomeController < ApplicationController
 	end
 
 	def sports
+		@sports = Sport.all
 	end
 
 
