@@ -5,4 +5,5 @@ class Member < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
          
   has_many :comments
+  has_many :queries
 end

@@ -2,6 +2,8 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
+@import "colors";
+
 #sidebar {
 	width: 40%;
 	float: right;
@@ -15,3 +17,50 @@
 
 	}
 }
+
+#query-list{
+	width: 55%;
+	float: left;
+	h2 {
+		text-align: center;
+	}
+	.query-index {
+		text-align: center;
+		line-height: 50px;
+	}
+}
+
+#query{
+	header {
+		text-align: center;
+		text-decoration: underline;
+	}
+	#query-body{
+		border: $grayborder;
+		padding: 2%;
+	}
+}
+
+.new-comment-form{
+	margin: 2%;
+	form .label {
+		color: black;
+	}
+}
+
+.comment-show{
+		border: $grayborder;
+		padding: 2%;
+}
+
+#comment_submit_action {
+
+	input{
+		padding: 3%;
+
+	}
+	
+}
+
+
+

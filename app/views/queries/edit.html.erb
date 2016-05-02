@@ -2,6 +2,9 @@
   <%= f.inputs do %>
     <%= f.input :title %>
     <%= f.input :body %>
+    	<% if current_member.admin == true %>
+    		<%= f.input :approved %>
+    	<% end %>
   <% end %>
   
   <%= f.actions do %>

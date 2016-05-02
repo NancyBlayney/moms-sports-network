@@ -5,10 +5,31 @@
 		<div id="query-body">
 			<%= @query.body %>
 		</div>
-		<section class="comments-list">
-			<% @comments.each do |c| %>
-				<div class="comment-show"><%= c.body %></div>
-			<% end %>
-		</section>
+
 	</div>
+
+<% if current_member != nil %>
+	<div class="new-comment-form">
+		<%= semantic_form_for @comment do |f|%>
+
+		  <%= f.inputs do %>
+		  	<%= f.input :query_id, as: :hidden, :value => @query.id %>
+		    <%= f.input :body, input_html: { rows: 3 }, label: 'Write a comment' %>
+		  <% end %>
+		  
+		  <%= f.actions do %>
+		    <%= f.action :submit, :as => :input %>
+		  <% end %>
+
+		<% end %>
+
+	</div>
+<% end %>
+
+<section class="comments-list">
+	<% @comments.each do |c| %>
+		<div class="comment-show"><%= c.body %></div>
+	<% end %>
+</section>
+
 </div>

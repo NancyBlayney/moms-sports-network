@@ -3,15 +3,24 @@
 // You can use Sass (SCSS) here: http://sass-lang.com/
 @import "colors";
 
+body{
+	background: url('cover.jpg')no-repeat center center fixed;
+}
+
+
+
 .container {
 	width: 100%;
 	max-width: 960px;
 	margin: 0 auto;
 	min-height: 60vh;
+	background-color: rgba(240,248,255, .85);
+	border-radius: 25px;
+	border: $grayborder;
 }
 
 .home-page{
-	border: $grayborder;
+	
 	border-radius: 25px;
 	padding: 1%;
 	min-height: 60vh;
@@ -24,7 +33,7 @@
 
 #logo {
 	max-width: 300px;
-	background-color: $gray;
+	background-color: transparent;
 	padding-left: 10%;
 	font-family: 'Rock Salt', cursive;
 	h2 {

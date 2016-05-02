@@ -1,13 +1,17 @@
 <%= link_to '<< Back to Admin Profile', admin_path %>
 <br>
 <br>
+<h3>Approved Queries</h3>
 <% @queries.each do |query| %>
 	<% if query.approved == true %>
-		<h3>Approved Queries</h3>
-		<%= query.title %><br>
-	<% else %>
-		<h3>Queries to be reviewed</h3>
-		<%= query.title %>	
+		
+		<%= query.title %> <%= link_to 'Edit Query', edit_query_path(query)%><br>
 	<% end %>
+<% end %>
 
+<h3>Queries waiting for approval</h3>
+<% @queries.each do |query| %>
+	<% if query.approved != true %>
+		<%= query.title %> <%= link_to 'Approve/Edit Query', edit_query_path(query)%><br>
+	<% end %>
 <% end %>

@@ -1,24 +1,29 @@
 <div class="page forum-page">
 
 	<div id="query-list">
+		<h2>Ongoing Conversations</h2>
+		<hr />
 		<% @queries.each do |q| %>
 			<% if q.approved == true %>
-				<a href="/queries/<%=q.id%>" class="query-title"><%= q.title %></a>
-				<em>
-					<% if q.comments.length == 1 %>
-						(<%= q.comments.length %> response)
-					<% else %>
-						(<%= q.comments.length %> responses)
-					<br>
-				<% end %>
-				</em>
+				<div class="query-index">
+					<a href="/queries/<%=q.id%>" class="query-title"><%= q.title %></a>
+					<em>
+						<% if q.comments.length == 1 %>
+							(<%= q.comments.length %> response)
+						<% else %>
+							(<%= q.comments.length %> responses)
+						<br>
+					<% end %>
+					</em>
+					<hr />
+					</div>
 			<% end %>
 		<% end %>
 	</div>
 
  <% if current_member != nil%>
 	<div id="sidebar">
-		<h3>Want to start a conversation? Ask a question below and our coaches will get back to you!</h3>
+		<h4>Want to start a conversation? Ask a question below and our coaches will get back to you!</h4>
 		<div class="query-form">
 		<%= semantic_form_for @query do |f| %>
 		  <%= f.inputs do %>
