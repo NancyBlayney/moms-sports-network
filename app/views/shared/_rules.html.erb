@@ -1,20 +1,21 @@
 <div class="partial rulesp">
 	<h2>The Rules</h2>
 	<ul>
-	<% @rules.each do |rule| %>
-		<li><%= rule.body %> 
-		<% if current_member != nil && current_member.admin == true %>
-			- <%= link_to 'Edit Rule', edit_rule_path(rule) %>
-		<% end %>
+		<% @rules.each do |rule| %>
+			<li><%= rule.body %> 
+			<% if current_member != nil && current_member.admin == true %>
+				- <%= link_to 'Edit Rule', edit_rule_path(rule) %>
+			<% end %>
+				<br>
+			<% if rule.sign != nil %>
+					<div class="rule-title"><h4><%= rule.sign.name %> -</h4></div>
+					<div class="rule-gif"><iframe src="<%= rule.sign.gif %>" width="200" height="266" frameBorder="0"></iframe>
+					<% if current_member != nil && current_member.admin == true %>
+						 - <%= link_to 'Edit Gif', edit_sign_path(rule.sign) %></div></li>
+					 <% end %>
+					 
+			<% end %>
 			<br>
-		<% if rule.sign != nil %>
-				<strong><%= rule.sign.name %> -</strong><br>
-				<iframe src="<%= rule.sign.gif %>" width="300" height="168" frameBorder="0"></iframe>
-				<% if current_member != nil && current_member.admin == true %>
-					 - <%= link_to 'Edit Gif', edit_sign_path(rule.sign) %></li>
-				 <% end %>
 		<% end %>
-		<br>
-	<% end %>
 	</ul>
 </div>

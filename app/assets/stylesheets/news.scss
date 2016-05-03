@@ -9,15 +9,13 @@
 }
 
 #news-display{
-	border: $border;
-	min-height: 50vh;
 	width: 100%;
-	background-color: #fffbf8;
 	display: flex;
 	flex-wrap: wrap;
 	justify-content: center;
 	.news-return{
 		position: relative;
+		background-color: rgba(240,248,255, .5);
 		margin: 2%;
 		padding: 2vh;
 		width: 190px;
